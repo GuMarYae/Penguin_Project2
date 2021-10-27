@@ -9,9 +9,9 @@ Im building a wishlist app  using mongo, express, node and liquid. The app is to
 ## Models
 
 The Model will cosist of a schema that will have 3 properties
-- a name property 
-- a number property  
-- a Boolean property 
+- name: String  
+- cost: Number  
+- Got it: Boolean  
 
 ## Route Table
 
