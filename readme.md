@@ -3,25 +3,40 @@
 
 ## Project Summary
 
-Im building a shopping list app  using mongo, express node and liquid. User should be able to put down what they need to buy on this app so that they don’t have to worry about forgetting after. It will consist of a name property, a number property and if its been obtained already.
+Im building a wishlist app  using mongo, express, node and liquid. The app is to bring the user excitement with the things that they come up with but to store it in their pockets and use the app whenever they forget whats on their wishlist. 
+
 
 ## Models
 
-I will be using one model and one seed to make this project work. I might call it shoppings, items, or wishlists
- something similar. PLanning on using the name as plural so I can use the indexes or ids in singular when it comes to making the loop. Just for my better understanding early on in developing.
+The Model will cosist of a schema that will have 3 properties
+- a name property 
+- a number property  
+- a Boolean property 
+
 ## Route Table
 
 List your routes in a table
 
-| url | method | action |
-|-----|--------|--------|
-| /todo | get | get all todos (index)|
-| /todo/:id | get | get a particular todo (show)|
-
+| url                  | method  | action                                 |
+|----------------------|---------|----------------------------------------|
+| /wishlists           | get     | get all wishlists items (index)        | index
+| /wishlists/:id       | get     | get a particular wishlists item (show) | show
+| /wishlists/:id/new   | get     | make a new item                        | new
+| /wishlists/          | post    | post the new item                      | create                           
+| /wishlists/:id/edit  | get     | edit any item on the list              | edit
+| /wishlists/:id/      | put     | update the edited item from the list   | update
+| /wishlists/:id       | delete  | delete any item                        | delete
 ## User Stories
-
+User should be able to put down what they want on this app so that they don’t have to worry about forgetting after. If they have the item, they can either delete the item or react to a "check" that they have it.
 ## Challenges
 
 - detail roadblocks and anything you did to overcome whether you did or didn't
 
 ## List of Technologies
+- node.js
+- HTML
+- CSS
+- LIQUID
+- EXPRESS
+- mongo
+- morgan
