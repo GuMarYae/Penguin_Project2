@@ -1,9 +1,13 @@
-// import deps
-const express = require("express")
-
 
 // app object
 const app = express()
+// import deps
+const express = require("express")
+//==import mongoose
+const mongoose = require("mongoose")
+//==use .env
+require("dotenv").config()
+
 
 
 // route
