@@ -1,0 +1,26 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<>
+<h3>Create a new list</h3>
+ <form action="/wishlists" method="post">
+  <fieldset>
+
+        <label>
+            Name: <input type="text" name="name" placeholder="Whats the name of the item you be wishing for, huh?"/>
+        </label>
+        <label>
+            cost: <input type="text" name="cost" placeholder="How much is this thing"/>
+        </label>
+        <label>
+            <!-- purchased: <input type="checkbox" name="got it"/> -->
+        </label>
+        <label>
+            purchased: <input type="submit" value="complete"/>
+        </label>
+    </fieldset>
+  
+ </form> 
+</ div>
+{% endblock %}
+

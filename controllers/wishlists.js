@@ -32,6 +32,45 @@ router.get("/", (req, res) => {
 });
 
 ////////////////////////////////////////////////////////
+// index  (json)
+////////////////////////////////////////////////////////
+
+// new route - get request - /wishlists/new
+router.get("/new", (req, res) => {
+    res.render("wishlists/new.liquid")
+})
+
+
+// create - post request - /wishlists
+router.post("/", (req, res) => {
+
+  // // convert the checkbox property to true or false
+  // req.body.readyToEat = req.body.readyToEat === "on" ? true : false
+
+  // create the new wishlists
+  Wishlists.create(req.body)
+  .then((Wishlist) => {
+      // redirect the user back to the index route
+      res.redirect("/wishlists")
+  })
+  // error handling
+  .catch((error) => {
+      res.json({error})
+  })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////
 // show
 ////////////////////////////////////////////////////////
 //get - /wishlists/:id
