@@ -1,47 +1,53 @@
-const express = require("express")
+const express = require("express");
 //importing the wishlists that was exported from the models folder...  the module.exports = Wishlists
-const Wishlists = require("../models/wishlists")
-
+const Wishlists = require("../models/wishlists");
 
 ////////////////////////////////////////////////////////
 // routers
 ////////////////////////////////////////////////////////
-const router = express.Router()
+const router = express.Router();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // routes   |indes, shoow, new, edit, create, update, and freakin DELETE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////
-// index
+// index  (json)
 ////////////////////////////////////////////////////////
-router.get("/", (req, res)=>{
-    
-    Wishlists.find({})
-    .then((wishlists)=> {
-        // console.log 
-        res.json(wishlists) 
-        
-    })
-})
+//===this is to see the data in JSON. we dont need this anymore
+
+// router.get("/", (req, res) => {
+//   Wishlists.find({})
+//   .then((wishlists) => {
+//     // console.log
+//     res.json(wishlists);
+//   });
+// });
+
+// index index
+router.get("/", (req, res) => {
+  Wishlists.find({}).then((wishlists) => {
+    res.render("wishlists/index.liquid", { wishlists });
+  });
+});
 
 ////////////////////////////////////////////////////////
 // show
 ////////////////////////////////////////////////////////
+//get - /wishlists/:id
+router.get("/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id
+
+    // get that particular wishlist item from the database
+    Wishlists.findById(id)
+    .then((wishlist) => {
+        // render the show template with the wishlists
+        res.render("wishlists/show.liquid", {wishlist})
+    })
+
+})
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = router
+module.exports = router;

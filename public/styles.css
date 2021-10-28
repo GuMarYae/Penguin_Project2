@@ -1,0 +1,21 @@
+header h1 {
+    text-align:center;
+    color: purple;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:3em;
+}
+
+.wishlist{
+    border-radius: 7em;;
+    width:80%;
+    margin:5px auto;
+    background-color:lightblue;
+    border:0.2em dotted;
+    padding:30px;
+}
+.button{
+    border-radius: 7em;
+    background-color: orange;
+    transition: background-color 3s, color 3s;
+}
+   
