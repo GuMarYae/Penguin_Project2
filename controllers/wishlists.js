@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 });
 
 ////////////////////////////////////////////////////////
-// index  (json)
+// new
 ////////////////////////////////////////////////////////
 
 // new route - get request - /wishlists/new
@@ -40,16 +40,16 @@ router.get("/new", (req, res) => {
     res.render("wishlists/new.liquid")
 })
 
-
+////////////////////////////////////////////////////////
+// update
+////////////////////////////////////////////////////////
 // create - post request - /wishlists
 router.post("/", (req, res) => {
-
   // // convert the checkbox property to true or false
   // req.body.readyToEat = req.body.readyToEat === "on" ? true : false
-
   // create the new wishlists
   Wishlists.create(req.body)
-  .then((Wishlist) => {
+  .then((wishlist) => {
       // redirect the user back to the index route
       res.redirect("/wishlists")
   })
@@ -64,8 +64,24 @@ router.post("/", (req, res) => {
 
 
 
-
-
+////////////////////////////////////////////////////////
+// delete
+////////////////////////////////////////////////////////
+// destroy route - delete request - /wishlist/:id
+router.delete("/:id", (req, res) => {
+  // grab the id from params
+  const id = req.params.id
+  // delete the wishlist
+  Wishlists.findByIdAndRemove(id)
+  .then((wishlist) => {
+      // redirect user back to index
+      res.redirect("/wishlists")
+  })
+   // error handling
+   .catch((error) => {
+      res.json({error})
+  })
+})
 
 
 
