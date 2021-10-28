@@ -4,28 +4,37 @@
 const mongoose = require("./connection")
 
 //importing the Wishlists from Wishlists.js
-const Wishlists = require("./Wishlists")
+const Wishlists = require("./wishlists")
 
 //save the connection in a variable
 const db = mongoose.connection
 
 //run the seed code when the connection opens 
 db.on("open", () => {
+
+ // delete all wishlists
+ Wishlists.deleteMany({})
+   .then(() => {
+
     // array of starter wishlists
-    const startWishlist = [
-        { name: "Xbox Series X", price: 500, purchased: false },
-        { name: "Gucci Envy", price: 80, purchased: false },
-        { name: "Comforter", price: 200, purchased: false },
-        { name: "Whataburger (yes, whatburger) Burger", price: 11, purchased: false },
-        { name: "Diamond Earrings", price: 3000, purchased: false },
+    const seedData = [
+        { name: "Xbox Series X", cost: 500, purchased: false },
+        { name: "Gucci Envy", cost: 80, purchased: false },
+        { name: "Comforter", cost: 200, purchased: false },
+        { name: "Hat", cost: 11, purchased: false },
+        { name: "Diamond Earrings", cost: 3000, purchased: false },
       ];
 
-    // delete all wishlists
-    Wishlists.deleteMany({}).then((data) => {
+   
+
         // seed the starter Wishlists
-        Wishlists.create(startWishlist).then((data) => {
+        Wishlists.create(seedData)
+        .then((data) => {
             console.log(data)
-            db.close()
+           db.close()
         })
     })
 })
+
+
+//3)check     lets goooo..   off to making the server

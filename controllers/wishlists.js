@@ -1,0 +1,26 @@
+const express = require("express")
+//importing the wishlists that was exported from the models folder...  the module.exports = Wishlists
+const Wishlists = require("../models/wishlists")
+
+
+////////////////////////////////////////////////////////
+// routers
+////////////////////////////////////////////////////////
+const router = express.Router()
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// routes   |indes, shoow, new, edit, create, update, and freakin DELETE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+router.get("/", (req, res)=>{
+    
+    Wishlists.find({})
+    .then((wishlists)=> {
+        // console.log 
+        res.json(wishlists) 
+        
+    })
+})
+
+module.exports = router

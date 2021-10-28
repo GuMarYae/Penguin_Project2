@@ -1,5 +1,6 @@
 //this took mongoose from connections (module.exports = mongoose )
 //⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+const mongoose = require("./connection")
 const {Schema, model} = require("mongoose")
 
 //creating the Schema
@@ -7,8 +8,8 @@ const {Schema, model} = require("mongoose")
 const WishlistsSchema = new Schema ({
     name: String,
     cost: Number,
-    purchased: Boolean,
-}, {timestamps:true})
+    purchased: Boolean
+})
 
 //creating the model
 const Wishlists = model("Wishlists", WishlistsSchema)

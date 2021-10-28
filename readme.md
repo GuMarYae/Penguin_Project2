@@ -30,7 +30,7 @@ List your routes in a table
 User should be able to put down what they want on this app so that they don’t have to worry about forgetting after. If they have the item, they can either delete the item or react to a "check" that they have it.
 ## Challenges
 
-- detail roadblocks and anything you did to overcome whether you did or didn't
+- putting      const mongoose = require("./connection")   inside of models/wishlists took me 3  hours to realize i needed to declare it at the top
 
 ## List of Technologies
 - node.js
