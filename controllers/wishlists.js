@@ -41,7 +41,7 @@ router.get("/new", (req, res) => {
 })
 
 ////////////////////////////////////////////////////////
-// update
+// create 
 ////////////////////////////////////////////////////////
 // create - post request - /wishlists
 router.post("/", (req, res) => {
@@ -60,8 +60,37 @@ router.post("/", (req, res) => {
 
 })
 
+////////////////////////////////////////////////////////
+// edit
+////////////////////////////////////////////////////////
+router.get("/:id/edit", (req,res) =>{
+  const id = req.params.id
+  Wishlists.findById(id)
+  .then((wishlist) => {
+    res.render("wishlists/edit.liquid", (wishlist)) 
+  })
 
+})
+////////////////////////////////////////////////////////
+// and update
+////////////////////////////////////////////////////////
+// update route - put request - "/wishlist/:id"
+router.put("/:id", (req, res) => {
+  // convert the checkbox property to true or false
+                                            
+  req.body.purchased = req.body.purchased === "on" ? true : false
+  // get the id from params
+  const id = req.params.id
+  
+  
 
+  // update the item with the matching id
+  Wishlists.findByIdAndUpdate(id, req.body, {new: true})
+  .then((wishlist) => {
+      // redirect user back to index
+      res.redirect("/wishlists")
+  })
+})
 
 
 ////////////////////////////////////////////////////////

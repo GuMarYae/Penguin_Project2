@@ -1,13 +1,13 @@
 {% layout "layout.liquid" %}
 {% block content %}
 
-<>
+<div>
 <h3>Create a new list</h3>
  <form action="/wishlists" method="post">
   <fieldset>
 
         <label>
-            Name: <input type="text" name="name" placeholder="Whats the name of the item you be wishing for, huh?"/>
+            Name: <input type="text" name="name" placeholder="Whats the name of your wish, huh?"/>
         </label>
         <label>
             cost: <input type="text" name="cost" placeholder="How much is this thing"/>
@@ -21,6 +21,6 @@
     </fieldset>
   
  </form> 
-</ div>
+</div>
 {% endblock %}
 

@@ -1,0 +1,30 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<div>
+<h3>Edit this wish</h3>
+ <form action="/wishlists/{{wishlist._id}}?_method=PUT" method="post">
+  <fieldset>
+
+        <label>
+            Name: <input type="text" name="name" placeholder="Whats the name of the item you're wishing for, huh?" value="{{purchased.complete}}">
+
+            <input type="checkbok" name ="purchased"
+            {% if wishlist.purchased == true%}
+            checked
+            {%endif%}>
+
+        </label>
+        <label>
+            cost: <input type="text" name="cost" placeholder="How much is this thing"/>
+        </label>
+       
+        <!-- <label>
+            purchased: <input type="submit" value="edit"/>
+        </label> -->
+    </fieldset>
+  
+ </form> 
+</div>
+{% endblock %}
+
