@@ -8,20 +8,21 @@
 
         <label>
             Name: <input type="text" name="name" placeholder="Whats the name of the item you're wishing for, huh?" value="{{purchased.complete}}">
-
-            <input type="checkbok" name ="purchased"
-            {% if wishlist.purchased == true%}
-            checked
-            {%endif%}>
-
+            <label>
+                cost: <input type="text" name="cost" placeholder="How much is this thing"/>
+            </label>
         </label>
-        <label>
-            cost: <input type="text" name="cost" placeholder="How much is this thing"/>
-        </label>
+            <input type="checkbox" name ="purchased"
+                {% if wishlist.purchased == true%}
+                     checked
+                {%endif%}>
        
-        <!-- <label>
-            purchased: <input type="submit" value="edit"/>
-        </label> -->
+        <label>
+            <input type="submit" value="Create the new wish item"/>
+        </label>
+        
+        <a class ="button" href="/wishlists"><button>Go back to your lists</button></a>
+
     </fieldset>
   
  </form> 

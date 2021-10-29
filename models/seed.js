@@ -21,7 +21,7 @@ db.on("open", () => {
         { name: "Xbox Series X", cost: 500, purchased: false },
         { name: "Gucci Envy", cost: 80, purchased: false },
         { name: "Comforter", cost: 200, purchased: false },
-        { name: "Hat", cost: 11, purchased: false },
+        { name: "MPC X", cost: 2500, purchased: false },
         { name: "Diamond Earrings", cost: 3000, purchased: false },
       ];
 

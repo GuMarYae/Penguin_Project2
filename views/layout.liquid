@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wishlist</title>
+    <title>WishlistS</title>
     <!-- Milligram CSS for Some Default Styling -->
     <!-- Google Fonts -->
     <link
@@ -33,20 +33,49 @@
 
     <!-- OUR CSS AND JS -->
     <link rel="stylesheet" href="/styles.css" />
-    <script src="/server.js" defer></script>
+    <script src="/app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>MarYae Wishlist app</h1>
+      <h1>Cloud Wishlist$</h1>
+     
     </header>
-    <a href="/wishlists/new"><button>jot down your new wish</button></a>
+    <a href="/wishlists/new"><button>Add a wish on your list 🎁</button></a>
+
+<!-- ================================================================================================================================ -->
+    <button data-modal-target="#modal">Open Mee</button> 
+    <div class ="modal" id = "modal">
+    <div class ="modal-header">
+<div class = "title">For a better understandiiiing.. Welcome to "your" wishlist</div>
+<button data-close-button class = "close-button">&times;</button>
+
+
+    </div>
+    <div class ="modal-body">
+‣ This is the main page of your wishes . On this page, you can add a new wish you think 
+  of  and save it here. Dope, right? <br>
+‣ On the edit made is whee you can actually delete a wish off of your list because, maybe you wish hasn’t 
+  came true and you don’t have the time to wait for it to become true. <br>
+‣ Shoot, you can even keep the item on your list and checking it off showing other people that you actually got. <br>
+
+‣ Never forget though. Never buy an item on your wishlist yourself. <br>
+  Okay, now go make some wishes 🙏🏾
+      
+    </div>
+  </div>
+  <div id ="overlay"></div>
+
+<!-- ================================================================================================================================ -->
 
     <main>
-        
+      <!-- LAYOUT.LIQUID IS THE TEMPLATE/ THE LIBRARY EVERYTHING WILL BE INSIDE THIS AND RESPOND TO THIS -->
         {% block content %}
-        
-       
-        
+   
+
+
+
+
+
         {% endblock %}
     
     </main>

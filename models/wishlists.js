@@ -8,7 +8,7 @@ const {Schema, model} = require("mongoose")
 const WishlistsSchema = new Schema ({
     name: String,
     cost: Number,
-    purchased: Boolean
+    purchased: {type: Boolean, required: true, default:false}
 })
 
 //creating the model

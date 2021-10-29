@@ -14,15 +14,7 @@ const router = express.Router();
 ////////////////////////////////////////////////////////
 // index  (json)
 ////////////////////////////////////////////////////////
-//===this is to see the data in JSON. we dont need this anymore
 
-// router.get("/", (req, res) => {
-//   Wishlists.find({})
-//   .then((wishlists) => {
-//     // console.log
-//     res.json(wishlists);
-//   });
-// });
 
 // index index
 router.get("/", (req, res) => {
@@ -41,7 +33,7 @@ router.get("/new", (req, res) => {
 })
 
 ////////////////////////////////////////////////////////
-// create 
+// and create 
 ////////////////////////////////////////////////////////
 // create - post request - /wishlists
 router.post("/", (req, res) => {
@@ -59,38 +51,60 @@ router.post("/", (req, res) => {
   })
 
 })
-
 ////////////////////////////////////////////////////////
 // edit
 ////////////////////////////////////////////////////////
-router.get("/:id/edit", (req,res) =>{
+
+// edit route - get request - /wishlists/:id/edit
+router.get("/:id/edit", (req, res) => {
+  // get the id from params
   const id = req.params.id
+
+  // get the wishlist with the matching id
   Wishlists.findById(id)
   .then((wishlist) => {
-    res.render("wishlists/edit.liquid", (wishlist)) 
+      // render the edit page template with the fruit data
+      res.render("wishlists/edit.liquid", { wishlist })
   })
-
+  // error handling
+  .catch((error) => {
+      res.json({error})
+  })
 })
+
 ////////////////////////////////////////////////////////
-// and update
+// and update 
 ////////////////////////////////////////////////////////
-// update route - put request - "/wishlist/:id"
+
+// update route - put request - "/wishlists/:id"
 router.put("/:id", (req, res) => {
   // convert the checkbox property to true or false
-                                            
   req.body.purchased = req.body.purchased === "on" ? true : false
+
   // get the id from params
   const id = req.params.id
   
   
-
   // update the item with the matching id
   Wishlists.findByIdAndUpdate(id, req.body, {new: true})
   .then((wishlist) => {
       // redirect user back to index
       res.redirect("/wishlists")
   })
+   // error handling
+   .catch((error) => {
+      res.json({error})
+  })
 })
+
+
+
+
+
+
+
+
+
 
 
 ////////////////////////////////////////////////////////
