@@ -1,21 +1,24 @@
 {%layout "layout.liquid" %}
 {% block content %}
-     
+    <body class = showBody>
+        
+        <a class ="buttonShow" href="/wishlists/{{ wishlist._id }}/edit"><button>EDIT</button></a>
 <div class = "wishlist">
-    <a class ="button" href="/wishlists/{{ wishlist._id }}/edit"><button>EDIT</button></a>
+   
 
     <h1>{{wishlist.name}}</h1>
     {%if wishlist.purchased == true%}
-       <h3>Your good</h3>
+       <h3>.    You're good</h3>
     {%else%}
     <h3>not completed. No goood</h3>
     {%endif%}
+</div>
+    <a class ="buttonShow" href="/wishlists"><button>Go back to your lists</button></a>
 
-    <a class ="button" href="/wishlists"><button>Go back to your lists</button></a>
-
-<form class ="delete" action="/wishlists/{{ wishlist._id }}?_method=DELETE" method="post">
+<form class ="buttonShow" action="/wishlists/{{ wishlist._id }}?_method=DELETE" method="post">
     <input type="submit" value="DELETE">
 </form>
+</body>
 
 
 <!-- ================================================================================================================================ -->
@@ -45,6 +48,7 @@
  -->
  <!-- ================================================================================================================================ -->
 </div>
+</body> 
 
 
     

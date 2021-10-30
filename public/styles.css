@@ -8,13 +8,14 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) scale(0);
-    transition:200ms ease-in-out;
+    transition:700ms ease-in-out;
     border:1px solid black;
     border-radius: 10px;
     z-index:10;
     background-color: white;
     width:500px;
     max-width:80%;
+    opacity: .95;
 
 }
 
@@ -53,13 +54,14 @@
 #overlay {
     position:fixed;
     /* opacity:0; */
-    transition:200ms ease-in-out;
+    transition:700ms ease-in-out;
     top:0;
     left:0;
     right:0;
     bottom:0;
     background-color:rgba (0,0,0, .5);
     pointer-events: none;
+    opacity: .95;
 }
 
 #overlay.active {
@@ -68,25 +70,177 @@
 }
 /* ================================================================================================================================ */
 /* ================================================================================================================================ */
+@keyframes rainbow {
+    0% {
+      background: black;
+    }
+    10% {
+      background: crimson;
+    }
+    30% {
+      background: hotpink;
+    }
+  
+    40% {
+      background: black;
+    }
+    50% {
+      background: palegreen;
+    }
+    60% {
+      background: black;
+    }
+    75% {
+      background: steelblue;
+    }
+  
+    90% {
+      background: rgb(240, 106, 4);
+    }
+    100% {
+      background: blue;
+    }
+}
+
+@keyframes black-to-white {
+    0% {
+      background: rgb(123, 121, 121);
+    }
+    50% {
+      background: lightgray;
+      /* width: 100%; */
+    }
+    100% {
+      background: rgb(123, 121, 121);
+    }
+  }
+  @keyframes black-to-white2 {
+    0% {
+      background: red;
+    }
+    50% {
+      background: blue;
+      width: 99%;
+    }
+    100% {
+      background: green;
+    }
+  }
+  
+    
+
+/* ================================================================================================================================ */
+/* ================================================================================================================================ */
+
 
 header h1 {
     text-align:center;
-    color: purple;
+    color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size:3em;
 }
 
 .wishlist{
-    border-radius: 7em;;
-    width:80%;
-    margin:5px auto;
-    background-color:lightblue;
-    border:0.2em dotted;
-    padding:30px;
+    border-radius: 5em;
+    width:50%;
+    margin:10px auto;
+    background-color:#EBEDF3;
+    border:0.2em double;
+    padding:30px 90px;
+    animation-name: black-to-white;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    opacity: .97;
+
 }
 .button{
+    font-weight: bold;
+    border-radius: 7em;
+    background-color: darkorange;
+    transition: background-color 3s, color 3s;
+}
+.buttonShow{
+    font-weight: bold;
     border-radius: 7em;
     background-color: orange;
     transition: background-color 3s, color 3s;
+    padding-left: 40.5%;
 }
    
+
+a {
+   color:darkviolet; 
+}
+
+
+.topButton{
+
+text-align: center;
+}
+
+
+.new {
+    padding-left:70px;
+}
+
+.edit {
+    padding-left:70px;
+    color:white;
+}
+
+.indexBody{
+    background-image: url(https://media.wired.com/photos/5c9040ee4950d24718d6da99/1:1/w_1800,h_1800,c_limit/shoppingcart-1066110386.jpg);
+width:100%;
+background-size: cover;
+
+
+}
+
+.showBody{
+    background-image: url(https://files.consumerfinance.gov/f/images/cfpb_mayg_grocery-shopping.original.png);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    width:100%;
+   
+}
+
+.newBody{
+    background-image: url(https://t3.ftcdn.net/jpg/02/73/88/92/360_F_273889254_CxvxWTiJr4D4ULhzTC8HaBk8l6xUp9xr.jpg);
+    background-size:cover;
+    width:100%;
+
+}
+
+.editBody{
+    background-image: url(https://t3.ftcdn.net/jpg/02/24/64/56/360_F_224645618_dtpq1bEjnN67g3gampm39hg698AUC9tf.jpg);
+    background-size:cover;
+    /* background-repeat: no-repeat;  */
+    width:100%;
+
+}
+
+label{
+    color:red;
+    width:90%;
+}
+
+input [type=text]{
+    background-color: white;
+}
+
+a h2 {
+    color:fuchsia;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+}
+
+div{
+    color:black;
+    text-align: center;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+}

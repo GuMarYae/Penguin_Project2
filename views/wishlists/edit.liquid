@@ -1,7 +1,12 @@
 {% layout "layout.liquid" %}
 {% block content %}
 
-<div>
+    
+
+<body class = "editBody">
+    
+
+<div class = "edit">
 <h3>Edit this wish</h3>
  <form action="/wishlists/{{wishlist._id}}?_method=PUT" method="post">
   <fieldset>
@@ -12,7 +17,7 @@
                 cost: <input type="text" name="cost" placeholder="How much is this thing"/>
             </label>
         </label>
-            <input type="checkbox" name ="purchased"
+        Did I get it? <input type="checkbox" name ="purchased"
                 {% if wishlist.purchased == true%}
                      checked
                 {%endif%}>
@@ -27,5 +32,7 @@
   
  </form> 
 </div>
+</body>
 {% endblock %}
+
 

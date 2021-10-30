@@ -1,7 +1,9 @@
 {% layout "layout.liquid" %}
 {% block content %}
+<body class ="newBody">
+    
 
-
+<div class ="new">
 <h3>Create a new list</h3>
  <form action="/wishlists" method="post">
   <fieldset>
@@ -16,9 +18,11 @@
         <label>
             Click to add : <input type="submit" value="yea, lets add it"/>
         </label>
+        <a class ="button" href="/wishlists"><button>Go back to your lists</button></a>
     </fieldset>
   
  </form> 
 </div>
+</body>
 {% endblock %}
 
