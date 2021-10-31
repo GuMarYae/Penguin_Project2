@@ -19,7 +19,7 @@ The Model will cosist of a schema that will have 3 properties
 List your routes in a table
 
 | url                 | method | action                                 |
-| ------------------- | ------ | -------------------------------------- | ------ |
+|---------------------|--------|----------------------------------------|--------|
 | /wishlists          | get    | get all wishlists items (index)        | index  |
 | /wishlists/:id      | get    | get a particular wishlists item (show) | show   |
 | /wishlists/:id/new  | get    | make a new item                        | new    |
