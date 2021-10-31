@@ -7,7 +7,7 @@
        {%for wishlist in wishlists%}
         <div class = "wishlist">
             <a href = "/wishlists/{{wishlist._id}}"><h2>{{wishlist.name}}
-                     <h3>$ {{wishlist.cost}}</h3>
+                     <h3>${{wishlist.cost}}</h3>
                 {%if wishlist.purchased == true%}
                     GOT IT 😃
                 {%else%}

@@ -134,10 +134,16 @@
 
 
 header h1 {
+  background-color: purple;
     text-align:center;
-    color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: goldenrod;
+    font-family:monospace;
     font-size:3em;
+    font-weight:700;
+    animation-name: rainbow;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;
+    opacity: .4;
 }
 
 .wishlist{
@@ -176,7 +182,9 @@ a {
 .topButton{
 
 text-align: center;
+
 }
+
 
 
 .new {
@@ -187,6 +195,13 @@ text-align: center;
     padding-left:70px;
     color:white;
 }
+h5 {
+  padding-left:45%;
+  color:royalblue;
+  font-size: 2em;
+  font-weight: 700;;
+}
+
 
 .indexBody{
     background-image: url(https://media.wired.com/photos/5c9040ee4950d24718d6da99/1:1/w_1800,h_1800,c_limit/shoppingcart-1066110386.jpg);

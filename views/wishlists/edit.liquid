@@ -5,16 +5,16 @@
 
 <body class = "editBody">
     
-
+    <h5>Edit this wish</h5>
 <div class = "edit">
-<h3>Edit this wish</h3>
+
  <form action="/wishlists/{{wishlist._id}}?_method=PUT" method="post">
   <fieldset>
 
         <label>
-            Name: <input type="text" name="name" placeholder="Whats the name of the item you're wishing for, huh?" value="{{purchased.complete}}">
+            Name: <input type="text" name="name" placeholder="Edit item name" value="{{purchased.complete}}">
             <label>
-                cost: <input type="text" name="cost" placeholder="How much is this thing"/>
+                cost: <input type="text" name="cost" placeholder="Edit item price"/>
             </label>
         </label>
         Did I get it? <input type="checkbox" name ="purchased"
@@ -23,7 +23,7 @@
                 {%endif%}>
        
         <label>
-            <input type="submit" value="Create the new wish item"/>
+            <input type="submit" value="Finish editing? click here!"/>
         </label>
         
         <a class ="button" href="/wishlists"><button>Go back to your lists</button></a>
