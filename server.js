@@ -62,9 +62,9 @@ app.use(express.static("public"))
 // Routes
 /////////////////////////////////////////
 
-app.get("/", (req, res) => {
-    res.send("hellooo")
-})
+// app.get("/", (req, res) => {
+//     res.send("hellooo")
+// })
 
 
 
